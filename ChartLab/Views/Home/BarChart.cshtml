@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Bar Chart";
+}
+<div class="bg-success mx-auto text-center pb-2">
+    <h3>Employee's Absence per Month</h3>
+</div>
+
+<canvas id="salesChart"></canvas>
+
+@section scripts{
+    <script src="~/Scripts/garaaz.chart.js"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+            const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const sales = [0, 10, 5, 2, 20, 45, 30, 15, 18, 35, 5, 0];
+            
+            gChart.DrawBarChart(labels, sales);
+        });
+    </script>
+}

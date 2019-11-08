@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Line Chart";
+}
+<div class="bg-success mx-auto text-center pb-2">
+    <h3>Sales Growth</h3>
+</div>
+
+<canvas id="salesChart"></canvas>
+
+@section scripts{
+<script src="~/Scripts/garaaz.chart.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+            const sales = [0, 10, 5, 2, 20, 30, 45];
+            const salesToCompare = [2, 5, 15, 10, 8, 60, 80];
+            const titleText = 'Sales by Day';
+            const xAxisLabel = 'Month';
+
+            gChart.DrawLineChart(labels, sales, salesToCompare, titleText, xAxisLabel);
+        });
+    </script>
+}
